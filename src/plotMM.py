@@ -1,3 +1,7 @@
+#################################################################################
+## Plots the number of messages sent by each member
+################################################################################# 
+
 import matplotlib.pyplot as plt
 
 plt.rcParams["font.family"] = "Times New Roman"

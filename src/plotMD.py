@@ -1,3 +1,7 @@
+#################################################################################
+## Plots the number of messages sent on each day of the week
+################################################################################# 
+
 import matplotlib.pyplot as plt
 
 plt.rcParams["font.family"] = "Times New Roman"
