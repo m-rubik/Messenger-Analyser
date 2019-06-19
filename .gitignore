@@ -1,2 +1,8 @@
-/.vscode
-/__pycache__
+\src\.vscode
+\src\plot\__pycache__
+\__pycache__
+\.vscode
+
+# Ignore any message files
+*.txt
+*.html

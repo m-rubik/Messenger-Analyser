@@ -13,7 +13,8 @@ def switchMonth(month):
         "Nov": '11',
         "Dec": '12'
     }
-    return switcher.get(month,"Invalid")
+    return switcher.get(month, "Invalid")
+
 
 def switchDay(day):
     switcher = {
@@ -25,7 +26,8 @@ def switchDay(day):
         "Saturday": '5',
         "Sunday": '6'
     }
-    return switcher.get(day,"Invalid")
+    return switcher.get(day, "Invalid")
+
 
 def switchBackDay(number):
     switcher = {
@@ -37,4 +39,4 @@ def switchBackDay(number):
         '5': "Saturday",
         '6': "Sunday"
     }
-    return switcher.get(number,"Invalid")
+    return switcher.get(number, "Invalid")
