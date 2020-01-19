@@ -1,5 +1,6 @@
-"""
-This script loads data/message.txt, parses through it, and plots various information
+"""!
+Contains functions required for loading facebook messenger data from message.txt.
+message.txt is essentially the .txt version of the html provided by facebook for a certain messenger conversation.
 """
 
 import os
@@ -13,6 +14,11 @@ import plot.plotCM as plotCM
 import plot.plotMD as plotMD
 import plot.plotContributions as plotContributions
 import plot.plotReactTotal as plotReactTotal
+import matplotlib.pyplot as plt
+
+
+plt.rcParams["font.family"] = "Times New Roman"
+plt.style.use('ggplot')
 
 
 def load_data():
@@ -22,13 +28,13 @@ def load_data():
         r'(<div class=\"_3-96 _2pio _2lek _2lel\">)(.*?)(<\/div><div class=\"_3-96 _2let\"><div><div><\/div><div>)(.*?)(<\/div>)(.*?)(<div class=\"_3-94 _2lem\">)([A-z]+)\s([0-9]+),\s([0-9]{4}),\s([0-9]+):([0-9]+)\s([A-z]{2})(<\/div>)', re.MULTILINE)
     react_check = re.compile(r'(<li>)(.*?)([A-z]+.*?)(<\/li>)', re.MULTILINE)
 
-    ## Read the messages file
+    # Read the messages file
     text = ''
     for line in open(os.path.join(os.path.realpath('.'), "src", "data", "message.txt"), "r", encoding='utf-8'):
         text = text.join(line)
     print("Messages loaded.")
 
-    ## Regex to find individual messages
+    # Regex to find individual messages
     found_data = master_check.findall(text)
     print("Found new master data.")
     found_reacts = react_check.findall(text)
@@ -108,5 +114,5 @@ if __name__ == "__main__":
     ## Plot number of messages sent by day of the week
     plotMD.plotMD(SWITCHBACK_DAYS)
 
-    ## Plot contributions made by a certain group member, or by "All"
-    plotContributions.plotContributions(data, "Gabriel Risbud-Vincent")
+    ## Plot contributions made by a group member's name, or by "All"
+    plotContributions.plotContributions(data, "All")

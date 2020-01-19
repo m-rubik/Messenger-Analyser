@@ -1,11 +1,8 @@
-#################################################################################
-## Plots the number of characters sent by each group member
-#################################################################################
+"""!
+Plot the number of characters sent by each group member
+"""
 
 import matplotlib.pyplot as plt
-
-plt.rcParams["font.family"] = "Times New Roman"
-
 
 def plotCM(data):
     x, y = zip(*data)
@@ -14,7 +11,6 @@ def plotCM(data):
     barplot = ax.bar(x, y)
     plt.setp(ax.get_xticklabels(), rotation=30, horizontalalignment='right')
     ax.set_ylabel('Number of characters sent', fontsize=18)
-
     y_max = max(y)
     y_medTier = round(y_max*(2/3))
     for each_bar in barplot:
@@ -24,6 +20,5 @@ def plotCM(data):
             each_bar.set_color('orange')
         else:
             each_bar.set_color("red")
-
     plt.title('Number of characters sent by group member', fontsize=18)
     plt.show()

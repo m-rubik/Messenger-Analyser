@@ -1,13 +1,15 @@
+"""!
+Plot the contributions made by a member to the chat
+"""
+
+
 import src.utilities as utilities
 import pandas as pd
 import statistics
 import matplotlib.pyplot as plt
 
-plt.rcParams["font.family"] = "Times New Roman"
-
 
 def plotContributions(data, member):
-    ### ANALYSE MESSAGES BY DATE ###
     firstMonth = utilities.switchMonth(data[len(data)-1][7])
     firstDay = data[len(data)-1][8]
     firstYear = data[len(data)-1][9]

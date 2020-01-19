@@ -1,12 +1,9 @@
-#################################################################################
-## Plots the usage of each reaction
-#################################################################################
+"""!
+Plots the usage of reaction emojis
+"""
+
 
 import matplotlib.pyplot as plt
-
-
-plt.rcParams["font.family"] = "Times New Roman"
-
 
 def plotReactTotal(data):
     x, y = zip(*data)
